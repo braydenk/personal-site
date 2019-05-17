@@ -2,40 +2,46 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import styles from '../styles/header.module.css';
+
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: '#f9f9f9',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
+  <header className={styles.header}>
+    <div className={styles.headerContentContainer}>
+      <h1 className={styles.headerTitle}>
         <Link
           to="/"
-          style={{
-            color: 'black',
-            textDecoration: 'none',
-          }}
+          className={styles.headerLink}
         >
           {siteTitle}
         </Link>
       </h1>
 
-      <ul style={{
-        listStyle: 'none',
-      }}
-      >
-        <li style={{ display: 'inline', paddingRight: '1.0em' }}>Blog</li>
-        <li style={{ display: 'inline', paddingRight: '1.0em' }}>Projects</li>
-        <li style={{ display: 'inline', paddingRight: '1.0em' }}>About</li>
+      <ul className={styles.headerMenu}>
+
+        <li className={styles.headerMenuItem}>
+          <Link
+            to="/"
+            className={styles.headerLink}
+          >
+            Home
+          </Link>
+        </li>
+        <li className={styles.headerMenuItem}>
+          <Link
+            to="/"
+            className={styles.headerLink}
+          >
+            Projects
+          </Link>
+        </li>
+        <li className={styles.headerMenuItem}>
+          <Link
+            to="/"
+            className={styles.headerLink}
+          >
+            About
+          </Link>
+        </li>
       </ul>
     </div>
   </header>
