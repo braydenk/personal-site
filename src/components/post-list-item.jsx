@@ -5,8 +5,12 @@ import styles from '../styles/post-list-item.module.css';
 export default function PostListItem({ title }) {
   return (
     <div className={styles.postItemContainer}>
-      <h3 className={styles.postItemTitle}>{title}</h3>
-      <a className={styles.postItemButton} href="/">Read more...</a>
+      <h3 className={styles.postItemTitle}>
+        {title}
+      </h3>
+      <a className={styles.postItemButton} href="/">
+        Read more...
+      </a>
     </div>
   );
 }

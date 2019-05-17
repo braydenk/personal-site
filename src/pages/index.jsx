@@ -7,11 +7,10 @@ import PostListItem from '../components/post-list-item';
 import styles from '../styles/index-page.module.css';
 
 export default function IndexPage({ data }) {
-  const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <Layout title={siteTitle}>
+    <Layout>
       <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
 
       <main className={styles.postListContainer}>
@@ -25,21 +24,17 @@ export default function IndexPage({ data }) {
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-      }).isRequired,
-    }).isRequired,
+    node: PropTypes.shape({
+      id: PropTypes.string,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string,
+      }),
+    }),
   }).isRequired,
 };
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
       edges {
         node {

@@ -1,10 +1,16 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 
 import styles from '../styles/header.module.css';
 
-const Header = ({ siteTitle }) => (
+const siteTitle = 'Brayden Killeen';
+const links = [
+  { id: 0, route: '/', title: 'Home' },
+  { id: 1, route: '/projects/', title: 'Projects' },
+  { id: 2, route: '/about/', title: 'About' },
+];
+
+const Header = () => (
   <header className={styles.header}>
     <div className={styles.headerContentContainer}>
       <h1 className={styles.headerTitle}>
@@ -17,42 +23,19 @@ const Header = ({ siteTitle }) => (
       </h1>
 
       <ul className={styles.headerMenu}>
-
-        <li className={styles.headerMenuItem}>
-          <Link
-            to="/"
-            className={styles.headerLink}
-          >
-            Home
-          </Link>
-        </li>
-        <li className={styles.headerMenuItem}>
-          <Link
-            to="/projects/"
-            className={styles.headerLink}
-          >
-            Projects
-          </Link>
-        </li>
-        <li className={styles.headerMenuItem}>
-          <Link
-            to="/about/"
-            className={styles.headerLink}
-          >
-            About
-          </Link>
-        </li>
+        {links.map(link => (
+          <li key={link.id} className={styles.headerMenuItem}>
+            <Link
+              to={link.route}
+              className={styles.headerLink}
+            >
+              {link.title}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   </header>
 );
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: 'Brayden Killeen',
-};
 
 export default Header;

@@ -4,7 +4,7 @@ import SEO from '../components/seo';
 
 export default function Projects() {
   return (
-    <Layout title="Projects">
+    <Layout>
       <SEO title="Projects" keywords={['gatsby', 'application', 'react']} />
       <p>The projects page</p>
     </Layout>
