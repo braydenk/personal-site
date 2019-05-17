@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/post-list-item.module.css';
 
-export default function PostListItem({ title }) {
+export default function PostListItem({ title, excerpt }) {
   return (
     <div className={styles.postItemContainer}>
-      <h3 className={styles.postItemTitle}>
+      <h1 className={styles.postItemTitle}>
         {title}
-      </h3>
+      </h1>
+      <p className={styles.postItemExcerpt}>{excerpt}</p>
       <a className={styles.postItemButton} href="/">
-        Read more...
+        Read More
       </a>
     </div>
   );
@@ -17,4 +18,5 @@ export default function PostListItem({ title }) {
 
 PostListItem.propTypes = {
   title: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
 };

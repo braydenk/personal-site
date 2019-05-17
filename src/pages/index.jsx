@@ -12,10 +12,13 @@ export default function IndexPage({ data }) {
   return (
     <Layout>
       <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
-
       <main className={styles.postListContainer}>
         {posts.map(({ node }) => (
-          <PostListItem key={node.id} title={node.frontmatter.title} />
+          <PostListItem
+            key={node.id}
+            title={node.frontmatter.title}
+            excerpt={node.excerpt}
+          />
         ))}
       </main>
     </Layout>
@@ -26,6 +29,7 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     node: PropTypes.shape({
       id: PropTypes.string,
+      excerpt: PropTypes.string,
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
       }),
@@ -39,6 +43,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          excerpt
           frontmatter {
             title
           }
