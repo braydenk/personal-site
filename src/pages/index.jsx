@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import PostListItem from '../components/post-list-item';
 
 export default function IndexPage({ data }) {
   const siteTitle = data.site.siteMetadata.title;
@@ -12,10 +13,8 @@ export default function IndexPage({ data }) {
     <Layout title={siteTitle}>
       <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
 
-      {posts.map(({ node: post }) => (
-        <div key={post.id}>
-          <h3>{post.frontmatter.title}</h3>
-        </div>
+      {posts.map(({ node }) => (
+        <PostListItem key={node.id} title={node.frontmatter.title} />
       ))}
     </Layout>
   );
