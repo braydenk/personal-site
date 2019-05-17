@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from './header';
-import '../styles/global.css';
 import styles from '../styles/layout.module.css';
 
 export default function Layout({ title, children }) {
