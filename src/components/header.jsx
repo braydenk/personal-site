@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => (
         </li>
         <li className={styles.headerMenuItem}>
           <Link
-            to="/"
+            to="/projects/"
             className={styles.headerLink}
           >
             Projects
@@ -36,7 +36,7 @@ const Header = ({ siteTitle }) => (
         </li>
         <li className={styles.headerMenuItem}>
           <Link
-            to="/"
+            to="/about/"
             className={styles.headerLink}
           >
             About
@@ -52,7 +52,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  siteTitle: '',
+  siteTitle: 'Brayden Killeen',
 };
 
 export default Header;
