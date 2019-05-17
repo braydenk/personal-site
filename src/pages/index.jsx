@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import PostListItem from '../components/post-list-item';
+import styles from '../styles/index-page.module.css';
 
 export default function IndexPage({ data }) {
   const siteTitle = data.site.siteMetadata.title;
@@ -13,9 +14,11 @@ export default function IndexPage({ data }) {
     <Layout title={siteTitle}>
       <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
 
-      {posts.map(({ node }) => (
-        <PostListItem key={node.id} title={node.frontmatter.title} />
-      ))}
+      <main className={styles.postListContainer}>
+        {posts.map(({ node }) => (
+          <PostListItem key={node.id} title={node.frontmatter.title} />
+        ))}
+      </main>
     </Layout>
   );
 }
