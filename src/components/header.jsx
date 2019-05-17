@@ -1,9 +1,8 @@
 import { Link } from 'gatsby';
 import React from 'react';
-
 import styles from '../styles/header.module.css';
+import logo from '../images/logo.png';
 
-const siteTitle = 'Brayden Killeen';
 const links = [
   { id: 0, route: '/', title: 'Home' },
   { id: 1, route: '/projects/', title: 'Projects' },
@@ -13,14 +12,12 @@ const links = [
 const Header = () => (
   <header className={styles.header}>
     <div className={styles.headerContentContainer}>
-      <h1 className={styles.headerTitle}>
-        <Link
-          to="/"
-          className={styles.headerLink}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <Link
+        to="/"
+      >
+        <img className={styles.headerLogo} src={logo} alt="logo" />
+      </Link>
+
 
       <ul className={styles.headerMenu}>
         {links.map(link => (
