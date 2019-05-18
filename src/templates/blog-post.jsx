@@ -5,10 +5,11 @@ import Layout from '../components/layout';
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark;
+
   return (
     <Layout>
       <h1>{post.frontmatter.title}</h1>
-      <div>{post.html}</div>
+      <div dangerouslySetInnerHTML={{__html: post.html}} />
     </Layout>
   );
 }
