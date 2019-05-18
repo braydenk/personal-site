@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from './header';
+import styles from '../styles/layout.module.css';
 
 export default function Layout({ children }) {
   return (
     <div>
       <Header />
-      {children}
+      <main className={styles.main}>
+        {children}
+      </main>
     </div>
   );
 }

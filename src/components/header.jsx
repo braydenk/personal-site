@@ -11,20 +11,17 @@ const links = [
 
 const Header = () => (
   <header className={styles.header}>
-    <div className={styles.headerContentContainer}>
-      <Link
-        to="/"
-      >
-        <img className={styles.headerLogo} src={logo} alt="logo" />
+    <div className={styles.container}>
+      <Link to="/">
+        <img className={styles.logo} src={logo} alt="logo" />
       </Link>
 
-
-      <ul className={styles.headerMenu}>
+      <ul className={styles.menu}>
         {links.map(link => (
-          <li key={link.id} className={styles.headerMenuItem}>
+          <li key={link.id} className={styles.menuItem}>
             <Link
               to={link.route}
-              className={styles.headerLink}
+              className={styles.link}
             >
               {link.title}
             </Link>

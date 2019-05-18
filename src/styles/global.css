@@ -1,22 +1,11 @@
-:global(html) {
+:global(body) {
   font-family: 'Montserrat', sans-serif;
   color: #2c3e50;
-  font-size: 1.04rem;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  letter-spacing: 0.01em;
 }
 
 :global(h1) {
   font-size: 2.7rem;
-}
-
-:global(a) {
-  color: #2c3e50;
-  text-decoration: none;
-}
-
-:global(p) {
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #212121;
-  font-size: 1.1rem;
-  line-height: 1.7rem;
-  letter-spacing: 0.01em;
 }
