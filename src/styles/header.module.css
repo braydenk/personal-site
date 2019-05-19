@@ -1,40 +1,51 @@
 .header {
-  height: 66px;
-  margin-top: 0.5em;
-  margin-bottom: 3em;
-  border-bottom: 0.5px solid #bdc3c7;
-}
-
-.container {
-  height: 100%;
+  height: 60px;
+  border-bottom: 1px solid #dbdbdb;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .08);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  height: 50px;
-  width: 50px;
-  margin-left: 2.0em;
+  flex: 0;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
 }
 
-.menu {
+.logo-link {
+  display: flex;
+  align-items: none;
+}
+
+.logo-image {
+  margin-left: 1.5rem;
+}
+
+.main-nav-container {
+  flex: 1;
+}
+
+.main-nav {
+  float: right;
+  margin-right: 1.5rem;
+}
+
+.main-nav-menu {
   list-style: none;
-  margin-right: 1.0em;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  column-gap: 1.5rem;
+  grid-auto-flow: column;
+  justify-content: start;
 }
 
 .menu-item {
-  display: inline;
-  font-weight: bold;
-  margin-right: 1.0em;
+  display: list-item;
 }
 
-.link {
-  text-decoration: none;
+.menu-item-link {
   color: #2c3e50;
-}
-
-.link:hover {
-  border-bottom: 2px solid #2ecc71;
+  text-decoration: none;
 }

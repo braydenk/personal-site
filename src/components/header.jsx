@@ -11,23 +11,39 @@ const links = [
 
 const Header = () => (
   <header className={styles.header}>
-    <div className={styles.container}>
-      <Link to="/">
-        <img className={styles.logo} src={logo} alt="logo" />
+    <div className={styles.logo}>
+      <Link
+        className={styles.logoLink}
+        to="/"
+      >
+        <img
+          className={styles.logoImage}
+          src={logo}
+          alt="logo"
+          width="40px"
+          height="40px"
+        />
       </Link>
+    </div>
 
-      <ul className={styles.menu}>
-        {links.map(link => (
-          <li key={link.id} className={styles.menuItem}>
-            <Link
-              to={link.route}
-              className={styles.link}
+    <div className={styles.mainNavContainer}>
+      <nav className={styles.mainNav}>
+        <ul className={styles.mainNavMenu}>
+          {links.map(link => (
+            <li
+              key={link.id}
+              className={styles.menuItem}
             >
-              {link.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+              <Link
+                to={link.route}
+                className={styles.menuItemLink}
+              >
+                {link.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   </header>
 );
