@@ -6,14 +6,16 @@ import styles from '../styles/post-list-item.module.css';
 export default function PostListItem({ link, title, excerpt }) {
   return (
     <div className={styles.container}>
-      <h1 className={styles.postItemTitle}>
-        {title}
-      </h1>
-      <p className={styles.postItemExcerpt}>
-        {excerpt}
-      </p>
-      <Link to={link} className={styles.postItemLink}>
-        Read More
+      <Link
+        className={styles.link}
+        to={link}
+      >
+        <h2 className={styles.title}>
+          {title}
+        </h2>
+        <p className={styles.excerpt}>
+          {excerpt}
+        </p>
       </Link>
     </div>
   );

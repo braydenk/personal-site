@@ -5,7 +5,7 @@ import styles from '../styles/layout.module.css';
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className={styles.layoutContainer}>
       <Header />
       <main className={styles.main}>
         {children}
