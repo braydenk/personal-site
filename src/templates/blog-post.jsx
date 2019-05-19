@@ -2,14 +2,22 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout';
+import styles from '../styles/blog-post.module.css';
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark;
 
   return (
     <Layout>
-      <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{__html: post.html}} />
+      <div className={styles.titleContainer}>
+        <h1 className={styles.postTitle}>
+          {post.frontmatter.title}
+        </h1>
+      </div>
+      <div
+        className={styles.postContent}
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
     </Layout>
   );
 }
